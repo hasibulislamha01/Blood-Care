@@ -1,8 +1,13 @@
 import { NavLink } from "react-router-dom";
-
+import './Navbar.css'
 
 
 const Navbar = () => {
+
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('.navbar-container')
+        header.classList.toggle('stickyNav', window.scrollY > 0)
+    })
 
 
     const navItems =
@@ -14,11 +19,11 @@ const Navbar = () => {
 
         </>
     return (
-        <div className="w-full h-[50px] fixed z-50 flex items-center justify-center">
-            <div className="navbar container mx-auto min-w-12  flex justify-center">
+        <div className="navbar-container z-50 w-full flex items-center justify-center">
+            <div className=" navbar container mx-auto min-w-12  flex justify-center">
 
                 <div className="navbar-start">
-                    <a className="font-semibold text-xl">Hasibul Islam</a>
+                    <a className="font-semibold text-xl">Blood Care</a>
                 </div>
 
                 <div className="navbar-end items-center gap-4 hidden lg:inline-flex font-medium">

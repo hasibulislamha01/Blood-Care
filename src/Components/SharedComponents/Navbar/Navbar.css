@@ -1,0 +1,10 @@
+.navbar-container{
+    height: 95px;
+    transition: 500ms ease;
+}
+
+.stickyNav{
+    height: 50px;
+    background-color: #fff1f2;
+    position: fixed;
+}
