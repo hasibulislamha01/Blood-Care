@@ -1,10 +1,69 @@
-.navbar-container{
-    height: 95px;
-    transition: 500ms ease;
+/* Navbar Container Styles */
+.navbar-container {
+    width: 100%; 
+    background-color: rgba(251, 113, 134, 0.669);
+    transition: all 1s ease-in-out;
 }
 
-.stickyNav{
-    height: 50px;
-    background-color: #fff1f2;
+/* Inner Container Styles */
+.inner-container {
+    max-width: 1200px; /* Adjust to your container width */
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    transition: all 1s ease-in-out;
+}
+
+/* Sticky Navbar Styles */
+.stickyNav {
     position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 1s ease-in-out;
+    width: 100%;
+    max-width: 1200px; /* Match container width */
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    height: 60px;
+    border-radius: 10px; /* Optional: add rounded corners */
+    margin-top: 5px;
+}
+
+/* Adjust Inner Container in Sticky State */
+.stickyNav .inner-container {
+    padding: 0 1rem;
+}
+
+/* Logo Styles */
+.logo {
+    font-size: 1.25rem;
+    margin-right: auto;
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+/* Link Styles */
+.navbar-container {
+    text-decoration: none;
+    transition: color 300ms ease;
+    border: 1px solid powderblue;
+}
+
+.inactive-link {
+    color: #9aabc7; 
+}
+
+.active-link {
+    color: #ff6b6b; /* Active link color */
+}
+
+/* Hover Effect */
+.navbar-container a:hover {
+    color: #ffdd57; /* Hover color */
 }

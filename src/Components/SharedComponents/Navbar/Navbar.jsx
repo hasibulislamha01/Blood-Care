@@ -1,35 +1,38 @@
 import { NavLink } from "react-router-dom";
-import './Navbar.css'
-
+import { useEffect, useState } from 'react';
+import './Navbar.css';
 
 const Navbar = () => {
+    const [isSticky, setIsSticky] = useState(false);
 
-    window.addEventListener('scroll', function () {
-        const header = document.querySelector('.navbar-container')
-        header.classList.toggle('stickyNav', window.scrollY > 0)
-    })
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsSticky(window.scrollY > 0);
+        };
 
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-    const navItems =
-        <>
-            <NavLink to='/' end className={({ isActive }) => isActive ? 'text-black border-b-2 border-black' : 'text-gray-500 border-gray-500'}>Home</NavLink>
+    const links = [
+        { title: 'Home', route: '/' },
+        { title: 'Surf', route: '/surf' },
+    ];
 
-            <NavLink to='/blogs' end className={({ isActive }) => isActive ? 'text-black border-b-2 border-black' : 'text-gray-500 border-gray-500'}>Blogs</NavLink>
-
-
-        </>
     return (
-        <div className="navbar-container z-50 w-full flex items-center justify-center">
-            <div className=" navbar container mx-auto min-w-12  flex justify-center">
-
-                <div className="navbar-start">
-                    <a className="font-semibold text-xl">Blood Care</a>
-                </div>
-
-                <div className="navbar-end items-center gap-4 hidden lg:inline-flex font-medium">
-                    {navItems}
-
-                </div>
+        <div className={`navbar-container ${isSticky ? 'stickyNav' : ''}`}>
+            <div className="inner-container">
+                <NavLink to='/'>
+                    Blood Care
+                </NavLink>
+                {links.map(item => (
+                    <NavLink
+                        key={item.route}
+                        to={item.route}
+                        className={({ isActive }) => isActive ? 'active-link' : 'inactive-link'}>
+                        {item.title}
+                    </NavLink>
+                ))}
             </div>
         </div>
     );
