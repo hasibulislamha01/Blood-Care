@@ -3,18 +3,17 @@
 }
 
 .thickContainer{
-    height: 70px;
+    height: 65px;
     transition: all 0.9s ease-in-out;
 }
 
 .thikNav{
-
     transition: all 0.9s ease-in-out;
 }
 
 
 .stickyContainer{
-    height: 60px;
+    height: 55px;
     max-width: 1200px;
     position: fixed;
     margin: 5px auto 0;
