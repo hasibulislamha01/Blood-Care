@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body{
-    background-image: '/bpink.jpg';
+    background-image: url('/bpink.jpg');
+
 }
 
 .glass-card {

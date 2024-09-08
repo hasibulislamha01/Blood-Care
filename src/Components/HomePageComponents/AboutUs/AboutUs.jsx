@@ -5,10 +5,10 @@ const AboutUs = () => {
 
 
     return (
-        <div className="h-screen flex flex-col justify-center items-center text-center space-y-6">
+        <div className="h-[calc(100vh-200px)] flex flex-col justify-center items-center text-center space-y-6 text-white glass-card">
             <h1 className="text-xl md:text-3xl ">
                 About
-                <span>BloodCare</span>
+                <span className="ml-2 text-red-400">BloodCare</span>
             </h1>
             <p className="w-[97%] md:w-[85%]">
                {description}

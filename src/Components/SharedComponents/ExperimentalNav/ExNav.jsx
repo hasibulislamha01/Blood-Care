@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './ExNav.css'
+import ThemeController from '../ThemeController/ThemeController';
 
 const ExNav = () => {
 
@@ -43,6 +44,7 @@ const ExNav = () => {
                             </NavLink>
                         )
                     }
+                    <ThemeController/>
                 </div>
 
             </div>
